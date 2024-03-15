@@ -2,7 +2,11 @@
 
 A minimal sandbox cluster running via `docker-compose` (1 master, 1 worker) as described in [this medium article](https://medium.com/p/9f12e915ecf4/edit).
 
-Quick points:
+TLDR: I'm not reading that article
 
-   - Base image is [bitnami/spark:3.5.1](https://hub.docker.com/layers/bitnami/spark/3.5.1/images/sha256-a4e73111cee89af2dfbb26d54d1a027946c75f2d37676b6d41e6c299b6b3f3c9?context=explore)
-   - Requires Java, Docker, python
+1. `export JAVA_HOME=/path/to/jre` 
+2. `docker pull bitnami/spark:3.5.1`
+3. `conda create -n pyspark-311 python=3.11 pyspark=3.5.1`
+4. `export HOST_IP=<YOUR IPV4 IP>`
+5. `docker-compose up --build`
+6. `conda activate pyspark-311 && python hello-pyspark.py`
